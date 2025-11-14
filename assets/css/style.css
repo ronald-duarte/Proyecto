@@ -37,7 +37,6 @@ h2, h3 {
     cursor: pointer;
     border-radius: 5px;
     font-size: 1rem;
-    margin-left: 10px;
 }
 .barrabusqueda {
     padding: 10px;
@@ -269,7 +268,6 @@ footer {
 
 
 /*contacto*/
-.contacto {
-    background-color: #f5f5f5;
-    text-align: center;
-}
+section .form-label  {
+    color: #0c2091;
+    }
