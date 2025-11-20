@@ -41,18 +41,18 @@ h2, h3 {
     font-size: 1rem;
 }
 
-/*Hover botones y menu*/
+/*Pseudoclases Hover botones y menu*/
 .boton:hover{
     background-color: #04043f;
     box-shadow: 0 8px 22px rgba(4, 4, 63, 0.3);
 }
 
-/*active botones presiona*/
+/*Pseudoclases active botones presiona*/
 .boton:active {
     transform: scale(.95);
     box-shadow: 0 4px 10px rgba(4, 4, 63, 0.2);
 }
-/* Focus visible: accesibilidad al navegar con teclado */
+/* Pseudoclases Focus visible: accesibilidad al navegar con teclado */
 .boton:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px rgba(4, 4, 63, 0.5); 
@@ -92,32 +92,6 @@ header nav ul{
     column-gap: 30px;
     list-style: none;
 }
-header nav ul li.submenu{
-    position: relative;
-}
-
-header nav ul li.submenu ul{
-    display: none;
-    transition: transform 0.3s ease;
-    background: #040488;
-    position:absolute;
-    padding: 10px;
-    top:20px;
-    left: -10px;
-    border-radius: 2px;
-    box-shadow:0 0 10px rgb(5, 5, 182);
-
-}
-header nav ul li.submenu ul li{
-    padding: 5px 0;
-
-}
-
-
-header nav ul li.submenu:hover ul{
-    display: block;
-
-}   
 
 header nav ul li a { 
 text-decoration: none;
@@ -133,31 +107,65 @@ color: #ecedf3;
     border-right: 1px solid #e5e7eb;
     padding-right: 1.25rem;
 }
-/* ====== Pseudoclases Submenú ====== */
-/* Mostrar con mouse y teclado (accesible) */
-.menu li.submenu:focus-within > ul {
-    display: block;
-}
-/* Rotar el chevron cuando el submenu está abierto */
-.menu li.submenu:hover > a > i,
-.menu li.submenu:focus-within > a > i {
-    transform: rotate(180deg);
-}
+
 
 .hamburguesa{
     color: rgb(231, 231, 235);
     font-size: 30px;
     display: none;
+    cursor: pointer;
 }
-@media (max-width:600px){
-    .hamburguesa{
-    display:block;
-    }
-    .menu{
+.menu-toggle {
     display: none;
-    }
 }
 
+/* ====== Estilos para pantallas pequeñas- media ====== */
+@media (max-width:600px){
+header {
+    position: relative;;
+    }
+    .hamburguesa{
+    display:block;
+    margin-left: auto;
+    }
+/* El navegador*/
+header nav {    
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+}
+header nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #050538;
+    margin: 0;
+    padding: 10px 0;
+    }
+header nav ul li {
+    padding: 8px 16px;
+    border-bottom: 1px solid #1f2937;
+    }
+header nav ul li a {
+    display: block;
+    color: #ecedf3;
+}
+header nav ul li a:hover {
+    background-color: #1f2937;
+}
+
+/* Mostrar el menú cuando el checkbox está marcado */
+.menu-toggle:checked + .hamburguesa + .menu ul {
+    display: flex;
+    }
+/* en movil quita borde derecho */
+.menu > ul > li:not(:last-child) {
+    border-right: none;
+    padding-right: 0;
+}
+}
+/* ====== Fin media navegador ====== */
 
 /*pie de paginas*/
 footer {
