@@ -7,6 +7,9 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 main {
     flex: 1;
@@ -119,66 +122,15 @@ color: #ecedf3;
     display: none;
 }
 
-/* ====== Estilos para pantallas pequeñas- media ====== */
-@media (max-width:600px){
-header {
-    position: relative;;
-    }
-    .hamburguesa{
-    display:block;
-    margin-left: auto;
-    }
-/* El navegador*/
-header nav {    
-    display: block;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-}
-header nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: #050538;
-    margin: 0;
-    padding: 10px 0;
-    }
-header nav ul li {
-    padding: 8px 16px;
-    border-bottom: 1px solid #1f2937;
-    }
-header nav ul li a {
-    display: block;
-    color: #ecedf3;
-}
-header nav ul li a:hover {
-    background-color: #1f2937;
-}
 
-/* Mostrar el menú cuando el checkbox está marcado */
-.menu-toggle:checked + .hamburguesa + .menu ul {
-    display: flex;
-    }
-/* en movil quita borde derecho */
-.menu > ul > li:not(:last-child) {
-    border-right: none;
-    padding-right: 0;
-}
-}
-/* ====== Fin media navegador ====== */
 
 /*pie de paginas*/
 footer {
     background-color: #050538;
     color: white;
     text-align: center;
-    position: fixed;
-    bottom: 0;
-    margin-top: 10px;
-    left: 0;
-    right: 0;
+    margin-top:auto;
     padding: .5rem 1rem;
-    z-index: 100;
 }
 
 /*PAGINAS*/
@@ -215,26 +167,35 @@ footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
+.pasos-card-inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    padding: 2rem;
+    align-items: center;
+    background-color: hsla(209, 100%, 50%, 0.205);
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
 
 
 /*contenedores normas con Grid*/
 .container-ruta {
-    display: grid;
-    justify-content: center;
+    max-width: 1200px;
     margin: 40px auto;
-    grid-template-rows: 0.5fr 1fr 2fr;
-    gap: 20px;
+    padding: 0 20px;
 }
+.container-ruta .centrado {
+    margin-bottom: 24px;
+}   
 .contenedor-pasos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
+    gap: 40px;
     align-content: center;
-    justify-items: stretch;
-    align-items: stretch;
-    gap: 24px;    
+
 }
 
 /*normas*/
@@ -285,3 +246,69 @@ section .form-label  {
     border: 2px solid #0c2091;
     border-radius: 5px;
 }
+
+/* ====== Estilos para pantallas pequeñas- media ====== */
+
+/* ====== media para el navegador ====== */
+@media (max-width:600px){
+header {
+    position: relative;;
+    }
+    .hamburguesa{
+    display:block;
+    margin-left: auto;
+    }
+/* El navegador*/
+header nav {    
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+}
+header nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #050538;
+    margin: 0;
+    padding: 10px 0;
+    }
+header nav ul li {
+    padding: 8px 16px;
+    border-bottom: 1px solid #1f2937;
+    }
+header nav ul li a {
+    display: block;
+    color: #ecedf3;
+}
+header nav ul li a:hover {
+    background-color: #1f2937;
+}
+
+/* Mostrar el menú cuando el checkbox está marcado */
+.menu-toggle:checked + .hamburguesa + .menu ul {
+    display: flex;
+    }
+/* en movil quita borde derecho */
+.menu > ul > li:not(:last-child) {
+    border-right: none;
+    padding-right: 0;
+}
+/* ====== Fin media navegador ====== */
+
+/* ====== media para el contenedor del index  ====== */
+
+.contenedor-pasos {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+}
+.pasos-card {
+    max-width: 350px;
+    margin: 0 auto;  
+
+}
+
+}
+
+
+
