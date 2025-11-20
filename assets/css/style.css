@@ -8,7 +8,9 @@ body {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-
+main {
+    flex: 1;
+}
 h1 {
     font-size: 2.5rem;
     color: #0c2091;
