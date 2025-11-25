@@ -1,0 +1,25 @@
+/*Pseudoclases Hover botones y menu*/
+.boton:hover{
+    background-color: #04043f;
+    box-shadow: 0 8px 22px rgba(4, 4, 63, 0.3);
+}
+
+/*Pseudoclases active botones presiona*/
+.boton:active {
+    transform: scale(.95);
+    box-shadow: 0 4px 10px rgba(4, 4, 63, 0.2);
+}
+/* Pseudoclases Focus visible: accesibilidad al navegar con teclado */
+.boton:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(4, 4, 63, 0.5); 
+}
+/* Pseudoclases para el menu*/
+.menu a:hover {
+    text-decoration: underline;
+    }
+/* ====== Separadores entre items (excepto el último) ====== */
+.menu > ul > li:not(:last-child) {
+    border-right: 1px solid #e5e7eb;
+    padding-right: 1.25rem;
+}

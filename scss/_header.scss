@@ -1,0 +1,32 @@
+/*contenedores Encabezado*/
+header{
+    background-color: #050538;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+
+}
+header nav {
+display: flex;
+align-items: center;
+}
+header nav ul{
+    display: flex;
+    column-gap: 30px;
+    list-style: none;
+}
+
+header nav ul li a { 
+text-decoration: none;
+color: #ecedf3;
+}
+.hamburguesa{
+    color: rgb(231, 231, 235);
+    font-size: 30px;
+    display: none;
+    cursor: pointer;
+}
+.menu-toggle {
+    display: none;
+}

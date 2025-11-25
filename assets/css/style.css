@@ -1,345 +1,358 @@
-
+@charset "UTF-8";
 /*GENERAL*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+/* Que TODOS los elementos usen border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Contenedor global tipo Bootstrap (≈1320px) */
+.contenedor-principal {
+  width: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px; /* similar a .container de Bootstrap */
+  padding-right: 12px;
+}
 
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
 main {
-    flex: 1;
+  flex: 1;
 }
+
 h1 {
-    font-size: 2.5rem;
-    color: #0c2091;
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #0c2091;
+  margin-bottom: 20px;
 }
+
 span {
-    color: #746c6c;
+  color: #746c6c;
 }
+
 h2, h3 {
-    color: #0c2091;
-    margin: auto;
-    }
+  color: #0c2091;
+  margin: auto;
+}
+
 /*centrado*/
 .centrado {
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px; 
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 /*botones*/
 .boton {
-    background-color: #0c2091;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
+  background-color: #0c2091;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/*parrafos mas destacados*/
+.destacado {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #04043f;
+  text-align: center;
+}
+
+/*Logo*/
+.inline-block {
+  height: 50px;
 }
 
 /*Pseudoclases Hover botones y menu*/
-.boton:hover{
-    background-color: #04043f;
-    box-shadow: 0 8px 22px rgba(4, 4, 63, 0.3);
+.boton:hover {
+  background-color: #04043f;
+  box-shadow: 0 8px 22px rgba(4, 4, 63, 0.3);
 }
 
 /*Pseudoclases active botones presiona*/
 .boton:active {
-    transform: scale(.95);
-    box-shadow: 0 4px 10px rgba(4, 4, 63, 0.2);
+  transform: scale(0.95);
+  box-shadow: 0 4px 10px rgba(4, 4, 63, 0.2);
 }
+
 /* Pseudoclases Focus visible: accesibilidad al navegar con teclado */
 .boton:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(4, 4, 63, 0.5); 
-}
-
-
-/*parrafos mas destacados*/
-.destacado {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    color: #04043f;
-    text-align: center;
-    }
-
-
-/*Logo*/
-.inline-block {
-    height: 50px;
-}
-
-/*contenedores Encabezado*/
-header{
-    background-color: #050538;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
-
-}
-header nav {
-display: flex;
-align-items: center;
-}
-header nav ul{
-    display: flex;
-    column-gap: 30px;
-    list-style: none;
-}
-
-header nav ul li a { 
-text-decoration: none;
-color: #ecedf3;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(4, 4, 63, 0.5);
 }
 
 /* Pseudoclases para el menu*/
 .menu a:hover {
-    text-decoration: underline;
-    }
+  text-decoration: underline;
+}
+
 /* ====== Separadores entre items (excepto el último) ====== */
 .menu > ul > li:not(:last-child) {
-    border-right: 1px solid #e5e7eb;
-    padding-right: 1.25rem;
+  border-right: 1px solid #e5e7eb;
+  padding-right: 1.25rem;
 }
 
-
-.hamburguesa{
-    color: rgb(231, 231, 235);
-    font-size: 30px;
-    display: none;
-    cursor: pointer;
+/*contenedores Encabezado*/
+header {
+  background-color: #050538;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
 }
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  column-gap: 30px;
+  list-style: none;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #ecedf3;
+}
+
+.hamburguesa {
+  color: rgb(231, 231, 235);
+  font-size: 30px;
+  display: none;
+  cursor: pointer;
+}
+
 .menu-toggle {
-    display: none;
+  display: none;
 }
 
-
-
-/*pie de paginas*/
-footer {
-    background-color: #050538;
-    color: white;
-    text-align: center;
-    margin-top:auto;
-    padding: .5rem 1rem;
-}
-
-/*PAGINAS*/
 /*Indice*/
 .inicio {
-    padding: 80px 20px;
-    background-image: url('../img/fondoindex.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    align-items: center;
-    text-align: center;
-    min-height: 200px
+  max-width: 1320px;
+  margin: 40px auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-image: url("../img/fondoindex.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  align-items: center;
+  text-align: center;
+  min-height: 200px;
 }
 
 .titulo_dentro {
-    display: block;
-    width: 100%;
-    margin: 1rem 0;
-    padding: 0.5rem;
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.5rem;
+}
+
+.pasos-card-inicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  align-items: center;
+  background-color: hsla(209, 100%, 50%, 0.205);
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container-ruta {
+  max-width: 1320px;
+  margin: 40px auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.container-ruta .centrado {
+  margin-bottom: 24px;
+}
+
+.contenedor-pasos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  align-content: center;
 }
 
 /*pasos*/
 .pasos-card {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    height: 100%;
-    padding: 1rem;
-    align-items: center;
-    background-color: hsla(209, 100%, 50%, 0.205);
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.pasos-card-inicio {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    padding: 2rem;
-    align-items: center;
-    background-color: hsla(209, 100%, 50%, 0.205);
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-
-
-/*contenedores normas con Grid*/
-.container-ruta {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-.container-ruta .centrado {
-    margin-bottom: 24px;
-}   
-.contenedor-pasos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    align-content: center;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+  align-items: center;
+  background-color: hsla(209, 100%, 50%, 0.205);
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /*normas*/
 /*fotos de las normas en grid*/
-.materialnormas{
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-    margin: 24px 20px 40px;
+.materialnormas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 24px 20px 40px;
 }
+
 .materialnormas figure {
-    margin: 0;
-    border-radius: 16px;
-    background-color: hsla(209, 100%, 50%, 0.205);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display:flex;
-    flex-direction: column;
-    overflow: hidden;
+  margin: 0;
+  border-radius: 16px;
+  background-color: hsla(209, 100%, 50%, 0.205);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .materialnormas img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
+
 /*texto bajo imagen*/
 .materialnormas figcaption {
-    padding: 16px 18px;
-    text-align: center;
+  padding: 16px 18px;
+  text-align: center;
 }
+
 /*titulo en la tarjeta*/
 .materialnormas figcaption h2 {
-    margin: 0 0 8px;
-    font-size: 1.2rem;
-    }
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
 
 /*parrafos en contenedores*/
 .materialnormas p {
-    color: #050583;
-    margin: 0;
-    line-height: 1.4;
-    font-size: 0.95rem;
+  color: #050583;
+  margin: 0;
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
 
+/*contacto*/
+section .form-label {
+  color: #0c2091;
+}
+
+.contacto .form-control {
+  border: 2px solid #0c2091;
+  border-radius: 5px;
 }
 
 /*buscador*/
 .bloque {
-    padding: 12px 24px;
-
+  padding: 12px 24px;
 }
+
 .barrabusqueda {
-    padding: 10px;
-    font-size: 1rem;
-    width: 300px;
-    border: 2px solid #0c2091;
-    border-radius: 5px;
-
+  padding: 10px;
+  font-size: 1rem;
+  width: 300px;
+  border: 2px solid #0c2091;
+  border-radius: 5px;
 }
 
-/*contacto*/
-section .form-label  {
-    color: #0c2091;
-    }
-
-.contacto .form-control {
-    border: 2px solid #0c2091;
-    border-radius: 5px;
+/*pie de paginas*/
+footer {
+  background-color: #050538;
+  color: white;
+  text-align: center;
+  margin-top: auto;
+  padding: 0.5rem 1rem;
 }
 
 /* ====== Estilos para pantallas pequeñas- media ====== */
-
 /* ====== media para el navegador ====== */
-@media (max-width:600px){
-header {
-    position: relative;;
-    }
-    .hamburguesa{
-    display:block;
+@media (max-width: 600px) {
+  header {
+    position: relative;
+  }
+  .hamburguesa {
+    display: block;
     margin-left: auto;
-    }
-/* El navegador*/
-header nav {    
+  }
+  /* El navegador*/
+  header nav {
     display: block;
     position: absolute;
     top: 60px;
     left: 0;
     right: 0;
-}
-header nav ul {
+  }
+  header nav ul {
     display: none;
     flex-direction: column;
     background-color: #050538;
     margin: 0;
     padding: 10px 0;
-    }
-header nav ul li {
+  }
+  header nav ul li {
     padding: 8px 16px;
     border-bottom: 1px solid #1f2937;
-    }
-header nav ul li a {
+  }
+  header nav ul li a {
     display: block;
     color: #ecedf3;
-}
-header nav ul li a:hover {
+  }
+  header nav ul li a:hover {
     background-color: #1f2937;
-}
-
-/* Mostrar el menú cuando el checkbox está marcado */
-.menu-toggle:checked + .hamburguesa + .menu ul {
+  }
+  /* Mostrar el menú cuando el checkbox está marcado */
+  .menu-toggle:checked + .hamburguesa + .menu ul {
     display: flex;
-    }
-/* en movil quita borde derecho */
-.menu > ul > li:not(:last-child) {
+  }
+  /* en movil quita borde derecho */
+  .menu > ul > li:not(:last-child) {
     border-right: none;
     padding-right: 0;
-}
-/* ====== Fin media navegador ====== */
-
-/* ====== media para el contenedor del index  ====== */
-
-.contenedor-pasos {
-    grid-template-columns: 1fr; 
+  }
+  /* ====== Fin media navegador ====== */
+  /* ====== media para el contenedor del index  ====== */
+  .contenedor-pasos {
+    grid-template-columns: 1fr;
     gap: 20px;
-}
-.pasos-card {
+  }
+  .pasos-card {
     max-width: 350px;
-    margin: 0 auto;  
-
-}
-/* ====== Fin movil contenedor index ====== */
-
-/* ====== movil para el contenedor normas  ====== */
-.materialnormas {
-    grid-template-columns: 1fr; 
+    margin: 0 auto;
+  }
+  /* ====== Fin movil contenedor index ====== */
+  /* ====== movil para el contenedor normas  ====== */
+  .materialnormas {
+    grid-template-columns: 1fr;
     margin: 16px 16px 32px;
-}
-.materialnormas figure {
+  }
+  .materialnormas figure {
     max-width: 420px;
     margin: 0 auto;
-}
-/* ====== fin movil para el contenedor normas  ====== */
-
-
+  }
+  /* ==== fin movil para el contenedor normas  ====== */
 }
 
-
-
+/*# sourceMappingURL=style.css.map */
