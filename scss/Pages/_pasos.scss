@@ -1,17 +1,12 @@
 @use "../base/variables";
+@use "../utilities/extend";
 
 /*pasos*/
 .pasos-card {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    height: 100%;
-    padding: 1rem;
-    align-items: center;
+    @extend %card-base; 
     background-color: variables.$color-fondo-card;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px variables.$sombra-card;
+    padding: 1rem;
+    height: 100%;
 }
 /* MODO OSCURO: cards de la página Pasos */
 body.dark .pasos-card {

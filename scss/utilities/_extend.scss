@@ -1,0 +1,13 @@
+@use "../base/variables";
+
+/* ====== PLACEHOLDER BASE PARA CARDS ====== */
+%card-base {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px variables.$sombra-card;
+}

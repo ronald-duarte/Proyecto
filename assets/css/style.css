@@ -1,6 +1,19 @@
 @charset "UTF-8";
 /*GENERAL*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+/* Mixin con CONDICIONAL para el botón de tema */
+/* ====== PLACEHOLDER BASE PARA CARDS ====== */
+.pasos-card, .pasos-card-inicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 /* Que TODOS los elementos usen border-box */
 *,
 *::before,
@@ -197,12 +210,17 @@ body.dark header .hamburguesa {
 .btn-toggle:hover {
   transform: translateY(-1px);
 }
+.btn-toggle {
+  background-color: #ffffff;
+  color: #0c2091;
+  border: 1px solid #1f2937;
+}
 
-/* botón en modo oscuro colores */
+/* botón en modo oscuro: colores según mixin con condicional */
 body.dark .btn-toggle {
   background-color: transparent;
   color: #ffffff;
-  border-color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 /*Indice*/
@@ -296,15 +314,7 @@ body.dark .inicio .titulo_dentro p {
 
 /* Cards del inicio: Podcast, Videos, Ejemplos, Quizzes */
 .pasos-card-inicio {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2rem;
-  align-items: center;
   background-color: hsla(209, 100%, 50%, 0.205);
-  text-align: center;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body.dark .pasos-card-inicio {
@@ -319,16 +329,9 @@ body.dark .pasos-card-inicio p {
 
 /*pasos*/
 .pasos-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  padding: 1rem;
-  align-items: center;
   background-color: hsla(209, 100%, 50%, 0.205);
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  height: 100%;
 }
 
 /* MODO OSCURO: cards de la página Pasos */

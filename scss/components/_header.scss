@@ -51,17 +51,18 @@ body.dark header .hamburguesa {
 .btn-toggle {
   margin-left: 1rem;
 
+  // Forma del botón (círculo, tamaño, hover, etc.)
   @include mixins.boton-icono(
-    #ffffff,                       // fondo claro sobre header oscuro
-    variables.$color-primario,     // color del emoji
-    variables.$boton-borde         // borde en modo claro
+    #ffffff,                       // fondo claro (igual que antes)
+    variables.$color-primario,     // color del emoji (igual que antes)
+    variables.$boton-borde         // borde en modo claro (igual que antes)
   );
+
+  // Colores según modo CLARO usando el mixin con condicional
+  @include mixins.boton-tema(light);
 }
 
-
-/* botón en modo oscuro colores */
+/* botón en modo oscuro: colores según mixin con condicional */
 body.dark .btn-toggle {
-  background-color: transparent;
-  color: variables.$colortext-contraste;
-  border-color: variables.$colortext-contraste;
+  @include mixins.boton-tema(dark);
 }

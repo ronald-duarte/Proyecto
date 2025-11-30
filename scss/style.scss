@@ -1,8 +1,8 @@
 @use "base/variables";
 @use "utilities/maps";
 @use "utilities/mixins";
+@use "utilities/extend";
 @use "base/general";
-
 @use "components/pseudoclases";
 @use "components/header";
 @use "pages/inicio";
@@ -12,4 +12,3 @@
 @use "pages/buscador";
 @use "components/footer";
 @use "base/queries";
-

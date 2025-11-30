@@ -36,3 +36,19 @@
     transform: translateY(-1px);
   }
 }
+/* Mixin con CONDICIONAL para el botón de tema */
+@mixin boton-tema($modo) {
+  @if $modo == light {
+    // Tema claro
+    background-color: #ffffff;
+    color: map.get($colores, color-primario);
+    border: 1px solid map.get($colores, boton-borde);
+  } @else if $modo == dark {
+    // Tema oscuro
+    background-color: transparent;
+    color: map.get($colores, colortext-contraste);
+    border: 1px solid map.get($colores, colortext-contraste);
+  } @else {
+    @warn "Modo `#{$modo}` no reconocido. Usa `light` o `dark`.";
+  }
+}

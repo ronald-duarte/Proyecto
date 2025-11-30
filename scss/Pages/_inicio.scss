@@ -1,4 +1,5 @@
 @use "../base/variables";
+@use "../utilities/extend";
 
 /*Indice*/
 .inicio {
@@ -94,15 +95,8 @@ body.dark .inicio .titulo_dentro p {
 
 /* Cards del inicio: Podcast, Videos, Ejemplos, Quizzes */
 .pasos-card-inicio {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    padding: 2rem;
-    align-items: center;
+    @extend %card-base;
     background-color: variables.$color-fondo-card;
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px variables.$sombra-card;
 }
 body.dark .pasos-card-inicio {
     background-color: variables.$color-fondo-primario;
