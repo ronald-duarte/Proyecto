@@ -8,7 +8,8 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
-
+    position: relative;
+    z-index: 20;
     nav {
         display: flex;
         align-items: center;
