@@ -9,3 +9,21 @@ section .form-label  {
     border: 2px solid variables.$color-primario;
     border-radius: 5px;
 }
+/* ===== MODO OSCURO: FORMULARIO DE CONTACTO ===== */
+
+/* Etiquetas del formulario en blanco para que resalten más */
+body.dark section .form-label {
+  color: variables.$colortext-contraste;
+}
+
+/* Inputs y textarea en modo oscuro */
+body.dark .contacto .form-control {
+  background-color: variables.$color-fondo-primario; // azul muy oscuro
+  color: variables.$colortext-contraste;             // texto blanco
+  border-color: variables.$colortext-contraste;      // borde claro para contraste
+}
+
+/* Color del placeholder en modo oscuro */
+body.dark .contacto .form-control::placeholder {
+  color: variables.$colortext-secundario;  // gris clarito
+}

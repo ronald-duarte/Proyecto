@@ -16,5 +16,17 @@ $sombras: rgba(4, 4, 63, 0.3); // sombra botones
 $boton-borde: #1f2937;
 
 
+//modo claro / oscuro
 
+$bg-page-light: #f8fafc;
+$text-page-light: $colortext-parrafo;
+
+$bg-page-dark: #020617;
+$text-page-dark: #e5e7eb;
+
+$card-light: $color-fondo-card;
+$card-dark: #0f172a;
+
+$header-bg-light: $color-fondo-primario;
+$header-bg-dark: $color-fondo-primario;
 

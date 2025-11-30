@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "../utilities/maps" as *;
+@use "../utilities/mixins";
 
 
 
@@ -23,7 +24,6 @@
     padding-right: 12px;
 }
 
-
 body {
     margin: 0;
     padding: 0;
@@ -33,16 +33,20 @@ body {
     display: flex;
     flex-direction: column;
 
+      /*mapa modo CLARO */
+    background-color: map.get($colores, bg-page-light);
+    color: map.get($colores, text-page-light);
+
     main {
         flex: 1;
     }
     h1 {
         font-size: 2.5rem;
-        color: map.get($colores, "color-primario");
+        color: map.get($colores, color-primario);
         margin-bottom: 20px;
     }
     h2, h3 {
-        color: map.get($colores, "color-primario");
+        color: map.get($colores, color-primario);
         margin: auto;
     }
 /*centrado*/
@@ -53,24 +57,40 @@ body {
     }
 /*botones*/
     .boton {
-        background-color: map.get($colores, "color-primario");
-        color: map.get($colores, "colortext-contraste");
-        border: none;
-        padding: map.get($spacing, 1) map.get($spacing, 2);
-        cursor: pointer;
-        border-radius: 5px;
-        font-size: 1rem;
+        @include mixins.boton-principal(
+        map.get($colores, color-primario),
+        map.get($colores, colortext-contraste));
     }
 /*parrafos mas destacados*/
     .destacado {
         font-size: 1.2rem;
         max-width: 800px;
         margin: 0 auto;
-        color: map.get($colores, "colortext-destacado");
+        color: map.get($colores, colortext-destacado);
         text-align: center;
     }
 /*Logo*/
     .inline-block {
         height: 50px;
     }
+}
+/* MODO OSCURO: cuando el body tenga class="dark" */
+body.dark {
+  background-color: map.get($colores, bg-page-dark);
+  color: map.get($colores, text-page-dark);
+}
+
+/* (Opcional) ajustes extra en dark */
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+  color: map.get($colores, colortext-contraste);
+}
+
+body.dark .boton {
+  background-color: map.get($colores, color-primario);
+  color: map.get($colores, colortext-contraste);
+}
+body.dark .destacado {
+  color: map.get($colores, colortext-contraste);
 }

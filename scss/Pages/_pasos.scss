@@ -11,5 +11,16 @@
     background-color: variables.$color-fondo-card;
     text-align: center;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px variables.$sombra-card;
+}
+/* MODO OSCURO: cards de la página Pasos */
+body.dark .pasos-card {
+  background-color: variables.$color-fondo-primario;
+  box-shadow: 0 4px 10px variables.$sombras;
+  color: variables.$colortext-contraste;
+}
+
+body.dark .pasos-card h3,
+body.dark .pasos-card p {
+  color: variables.$colortext-contraste;
 }

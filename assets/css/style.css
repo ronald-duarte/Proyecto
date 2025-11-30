@@ -26,6 +26,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  /*mapa modo CLARO */
+  background-color: #f8fafc;
+  color: #0b1220;
 }
 body main {
   flex: 1;
@@ -74,6 +77,28 @@ body {
 }
 body .inline-block {
   height: 50px;
+}
+
+/* MODO OSCURO: cuando el body tenga class="dark" */
+body.dark {
+  background-color: #020617;
+  color: #e5e7eb;
+}
+
+/* (Opcional) ajustes extra en dark */
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+  color: #ffffff;
+}
+
+body.dark .boton {
+  background-color: #0c2091;
+  color: #ffffff;
+}
+
+body.dark .destacado {
+  color: #ffffff;
 }
 
 /*Pseudoclases Hover botones*/
@@ -139,6 +164,45 @@ header .hamburguesa {
   cursor: pointer;
 }
 
+/* ===== MODO OSCURO PARA EL HEADER ===== */
+body.dark header {
+  background-color: #050538;
+}
+
+/* Color de los links y el ícono */
+body.dark header a,
+body.dark header .hamburguesa {
+  color: #ffffff;
+}
+
+/* ===== botón de modo oscuro solo con icono ===== */
+.btn-toggle {
+  margin-left: 1rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid #1f2937;
+  background-color: #ffffff;
+  color: #0c2091;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+.btn-toggle:hover {
+  transform: translateY(-1px);
+}
+
+/* botón en modo oscuro colores */
+body.dark .btn-toggle {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
 /*Indice*/
 .inicio {
   max-width: 1320px;
@@ -152,12 +216,15 @@ header .hamburguesa {
   align-items: center;
   text-align: center;
   min-height: 200px;
+  position: relative;
 }
 .inicio .titulo_dentro {
   width: 100%;
   margin: 1rem 0;
   padding: 0.5rem;
   font-size: 2rem;
+  position: relative;
+  z-index: 2;
 }
 .inicio .titulo_dentro .titulo_pre {
   display: block;
@@ -168,6 +235,42 @@ header .hamburguesa {
   display: block;
   color: #0c2091;
   font-weight: 700;
+}
+.inicio .titulo_dentro p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #746c6c;
+}
+
+/* ===== MODO OSCURO PARA EL BANNER DEL INDEX ===== */
+/* Cambiamos la imagen de fondo */
+body.dark .inicio {
+  background-image: url("../img/fondoindex_oscuro.png");
+}
+
+body.dark .inicio::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+/* Caja del texto: panel oscuro detrás del contenido */
+body.dark .inicio .titulo_dentro .titulo_pre,
+body.dark .inicio .titulo_dentro .titulo_marca {
+  color: #ffffff;
+}
+
+/*SOLO el párrafo lleva una caja oscura debajo */
+body.dark .inicio .titulo_dentro p {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 0.5rem;
 }
 
 /* Contenedor de la ruta "Aprende con" */
@@ -202,6 +305,16 @@ header .hamburguesa {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+body.dark .pasos-card-inicio {
+  background-color: #050538;
+  color: #ffffff;
+}
+
+body.dark .pasos-card-inicio h3,
+body.dark .pasos-card-inicio p {
+  color: #ffffff;
+}
+
 /*pasos*/
 .pasos-card {
   display: flex;
@@ -214,6 +327,18 @@ header .hamburguesa {
   text-align: center;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* MODO OSCURO: cards de la página Pasos */
+body.dark .pasos-card {
+  background-color: #050538;
+  box-shadow: 0 4px 10px rgba(4, 4, 63, 0.3);
+  color: #ffffff;
+}
+
+body.dark .pasos-card h3,
+body.dark .pasos-card p {
+  color: #ffffff;
 }
 
 /*normas*/
@@ -260,6 +385,17 @@ header .hamburguesa {
   font-size: 0.95rem;
 }
 
+/* ===== MODO OSCURO PARA LAS TARJETAS DE NORMAS ===== */
+body.dark .materialnormas figure {
+  background-color: #050538;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .materialnormas figure figcaption h2,
+body.dark .materialnormas figure figcaption p {
+  color: #ffffff;
+}
+
 /*contacto*/
 section .form-label {
   color: #0c2091;
@@ -268,6 +404,24 @@ section .form-label {
 .contacto .form-control {
   border: 2px solid #0c2091;
   border-radius: 5px;
+}
+
+/* ===== MODO OSCURO: FORMULARIO DE CONTACTO ===== */
+/* Etiquetas del formulario en blanco para que resalten más */
+body.dark section .form-label {
+  color: #ffffff;
+}
+
+/* Inputs y textarea en modo oscuro */
+body.dark .contacto .form-control {
+  background-color: #050538;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Color del placeholder en modo oscuro */
+body.dark .contacto .form-control::placeholder {
+  color: #746c6c;
 }
 
 /*buscador*/

@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "maps" as *;
+
+// Mixin para botones principales -busqueda y contacto)
+@mixin boton-principal($bg, $text) {
+  background-color: $bg;
+  color: $text;
+  border: none;
+  padding: map.get($spacing, 1) map.get($spacing, 2);
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+// Mixin para botón de ícono (luna/sol del modo oscuro)
+@mixin boton-icono($bg, $text, $border-color) {
+  width: 2.3rem;
+  height: 2.3rem;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid $border-color;
+  background-color: $bg;
+  color: $text;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.1rem; // tamaño del emoji
+  cursor: pointer;
+  transition: background-color .2s ease,
+              color .2s ease,
+              border-color .2s ease,
+              transform .1s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}

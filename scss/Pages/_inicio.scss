@@ -13,12 +13,15 @@
     align-items: center;
     text-align: center;
     min-height: 200px;
+    position: relative;
 
     .titulo_dentro {
         width: 100%;
         margin: 1rem 0;
         padding: 0.5rem;
         font-size: 2rem;
+        position: relative;
+        z-index: 2;
 
         .titulo_pre {
             display: block;
@@ -30,7 +33,43 @@
             color: variables.$color-primario;
             font-weight: 700;
         }
+        p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.4;
+            color: variables.$colortext-secundario;
+        }
     }
+}
+/* ===== MODO OSCURO PARA EL BANNER DEL INDEX ===== */
+
+/* Cambiamos la imagen de fondo */
+body.dark .inicio {
+  background-image: url("../img/fondoindex_oscuro.png");
+}
+
+body.dark .inicio::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;  
+}
+
+/* Caja del texto: panel oscuro detrás del contenido */
+body.dark .inicio .titulo_dentro .titulo_pre,
+body.dark .inicio .titulo_dentro .titulo_marca {
+  color: variables.$colortext-contraste;
+}
+
+ /*SOLO el párrafo lleva una caja oscura debajo */
+body.dark .inicio .titulo_dentro p {
+  color: variables.$colortext-contraste;
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  display: inline-block;   // para que la caja siga el texto
+  margin-top: 0.5rem;
 }
 
 /* Contenedor de la ruta "Aprende con" */
@@ -64,5 +103,14 @@
     text-align: center;
     border-radius: 15px;
     box-shadow: 0 4px 6px variables.$sombra-card;
+}
+body.dark .pasos-card-inicio {
+    background-color: variables.$color-fondo-primario;
+    color: variables.$colortext-contraste;
+}
+
+body.dark .pasos-card-inicio h3,
+body.dark .pasos-card-inicio p {
+    color: variables.$colortext-contraste;
 }
 

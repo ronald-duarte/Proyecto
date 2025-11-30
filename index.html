@@ -7,9 +7,8 @@
     <!--Para el menu de hamburgueza-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-
 </head>
-<body>
+<body class="dark">
     <header>
         <div>
 <!--Encabezado-->
@@ -32,7 +31,13 @@
                 <li><a href="pages/buscador.html">Buscador</a></li>
                 <li><a href="pages/contacto.html">Contacto</a></li>
             </ul>
-        </nav>    
+        </nav>
+    <button
+    id="toggle-theme"
+    class="btn-toggle"
+    aria-label="Cambiar tema"
+    title="Cambiar tema">
+    </button>   
     </header>
     <main>
 <!--bienvenida con imagen y resumen-->
@@ -70,7 +75,8 @@
     </main>
     <footer>
     © 2025 AprendeNIIF.Cl — Todos los derechos reservados
-    </footer>        
+    </footer>
+    <script src="assets/js/theme.js"></script>        
 </body>
 </html>
 

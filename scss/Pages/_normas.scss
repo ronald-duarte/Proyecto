@@ -44,3 +44,14 @@
         }
     }
 }        
+/* ===== MODO OSCURO PARA LAS TARJETAS DE NORMAS ===== */
+
+body.dark .materialnormas figure {
+  background-color: variables.$color-fondo-primario; // azul oscuro
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .materialnormas figure figcaption h2,
+body.dark .materialnormas figure figcaption p {
+  color: variables.$colortext-contraste; // texto blanco
+}
