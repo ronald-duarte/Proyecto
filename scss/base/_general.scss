@@ -1,0 +1,76 @@
+@use "sass:map";
+@use "../utilities/maps" as *;
+
+
+
+/*GENERAL*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Que TODOS los elementos usen border-box */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Contenedor global tipo Bootstrap (≈1320px) */
+.contenedor-principal {
+    width: 100%;
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    main {
+        flex: 1;
+    }
+    h1 {
+        font-size: 2.5rem;
+        color: map.get($colores, "color-primario");
+        margin-bottom: 20px;
+    }
+    h2, h3 {
+        color: map.get($colores, "color-primario");
+        margin: auto;
+    }
+/*centrado*/
+    .centrado {
+        text-align: center;
+        margin-bottom: map.get($spacing,1);
+        margin-top: map.get($spacing,2); 
+    }
+/*botones*/
+    .boton {
+        background-color: map.get($colores, "color-primario");
+        color: map.get($colores, "colortext-contraste");
+        border: none;
+        padding: map.get($spacing, 1) map.get($spacing, 2);
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+/*parrafos mas destacados*/
+    .destacado {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: map.get($colores, "colortext-destacado");
+        text-align: center;
+    }
+/*Logo*/
+    .inline-block {
+        height: 50px;
+    }
+}

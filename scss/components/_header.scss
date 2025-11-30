@@ -1,0 +1,38 @@
+@use "../base/variables";
+
+/*contenedores Encabezado*/
+header{
+    background-color: variables.$color-fondo-primario;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+
+    nav {
+        display: flex;
+        align-items: center;
+
+        ul{
+            display: flex;
+            column-gap: 30px;
+            list-style: none;
+            li {
+                a { 
+                    text-decoration: none;
+                    color: variables.$colortext-contraste;
+                }   
+            }
+        }
+    }
+    .menu-toggle {
+        display: none;
+    }
+    .hamburguesa{
+        color: variables.$colortext-contraste;
+        font-size: 30px;
+        display: none;
+        cursor: pointer;
+    }
+}
+
+

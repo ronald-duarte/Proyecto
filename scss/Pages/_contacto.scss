@@ -1,0 +1,11 @@
+@use "../base/variables";
+
+/*contacto*/
+section .form-label  {
+    color: variables.$color-primario;
+    }
+
+.contacto .form-control {
+    border: 2px solid variables.$color-primario;
+    border-radius: 5px;
+}

@@ -1,0 +1,35 @@
+@use "../base/variables";
+
+/*Pseudoclases Hover botones*/
+.boton {
+    &:hover{
+        background-color: variables.$botones-hover;
+        box-shadow: 0 8px 22px variables.$sombras;
+    }
+
+/*Pseudoclases active botones presiona*/
+    &:active {
+        transform: scale(.95);
+        box-shadow: 0 4px 10px variables.$sombras;
+    }
+/* Pseudoclases Focus visible: accesibilidad al navegar con teclado */
+    &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px variables.$sombras; 
+    }
+}
+
+
+/* Pseudoclases para el menu*/
+.menu { 
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }    
+/* ====== Separadores entre items (excepto el último) ====== */
+    > ul > li:not(:last-child) {
+        border-right: 1px solid variables.$colortext-contraste;
+        padding-right: 1.25rem;
+    }
+}    

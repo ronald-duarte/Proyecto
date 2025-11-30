@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrega2</title>
+    <title>AprendeNIIF.CL Buscador de Material</title>
     <!--Para el menu de hamburgueza-->
-    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">    
     <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
@@ -13,7 +13,8 @@
     <header>
         <div>
             <!--Encabezado-->
-            <a href="../index.html" class="inline-block"><img src="../assets/img/logo_blanco.png" alt="Logo" class="inline-block"></a>
+            <a href="../index.html" class="inline-block">
+                <img src="../assets/img/logo_blanco.png" alt="Logo AprendeNIIF.cl" class="inline-block"></a>
         </div>
 <!-- Checkbox oculto que controla el menú -->
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
@@ -35,29 +36,33 @@
     </header>
     <main>
     <!--Titulo y Buscador-->
-    <section>
+    <section aria-labelledby="titulo-busqueda">
         <div class="centrado">
-            <h1>Buscador de Material
+            <h1 id="titulo-busqueda">Buscador de Material
             </h1>
-            <input type="text" class="barrabusqueda" placeholder="Escribe la norma aquí: NIIF 15, NIIF 9">
-            <button class="boton">Buscar
-            </button>
+            <input 
+                type="text" 
+                class="barrabusqueda"
+                name="query"
+                aria-label="busqueda material por norma" 
+                placeholder="Escribe la norma aquí: NIIF 15, NIIF 9">
+            <button class="boton">Buscar</button>
         </div>
     </section>
     <!--Detalle de los mas recientes-->
-    <section>
+    <section aria-labelledby="mas-recientes">
         <div class="contenedor-principal">
         <div class="bloque">
-        <h2 class="centrado">Mas recientes</h2>
+        <h2 id="mas-recientes" class="centrado">Mas recientes</h2>
         <div class="flex-container">
-            <div>
+            <article>
             <h3>NIIF 15 - Ingresos de actividades ordinarias procedentes de contratos con clientes</h3>
             <p>Explora nuestro material interactivo sobre la NIIF 15, que aborda el reconocimiento de ingresos de actividades ordinarias procedentes de contratos con clientes. Aprende a aplicar esta norma esencial en la contabilidad financiera.</p>
-            </div>
-            <div>
+            </article>
+            <article>
             <h3>NIIF 9 - Instrumentos financieros</h3>
             <p>Descubre nuestro material interactivo sobre la NIIF 9, que cubre la clasificación, medición y deterioro de instrumentos financieros. Domina los conceptos clave para una gestión financiera efectiva.</p>
-            </div>
+            </article>
         </div>
         </div>   
     </section>

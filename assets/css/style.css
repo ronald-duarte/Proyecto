@@ -14,7 +14,7 @@
   max-width: 1320px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 12px; /* similar a .container de Bootstrap */
+  padding-left: 12px;
   padding-right: 12px;
 }
 
@@ -27,84 +27,84 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-main {
+body main {
   flex: 1;
 }
-
-h1 {
+body h1 {
   font-size: 2.5rem;
   color: #0c2091;
   margin-bottom: 20px;
 }
-
-span {
-  color: #746c6c;
-}
-
-h2, h3 {
+body h2, body h3 {
   color: #0c2091;
   margin: auto;
 }
-
-/*centrado*/
-.centrado {
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
+body {
+  /*centrado*/
 }
-
-/*botones*/
-.boton {
+body .centrado {
+  text-align: center;
+  margin-bottom: 0.625rem;
+  margin-top: 1.25rem;
+}
+body {
+  /*botones*/
+}
+body .boton {
   background-color: #0c2091;
-  color: white;
+  color: #ffffff;
   border: none;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   cursor: pointer;
   border-radius: 5px;
   font-size: 1rem;
 }
-
-/*parrafos mas destacados*/
-.destacado {
+body {
+  /*parrafos mas destacados*/
+}
+body .destacado {
   font-size: 1.2rem;
   max-width: 800px;
   margin: 0 auto;
-  color: #04043f;
+  color: #0c1757;
   text-align: center;
 }
-
-/*Logo*/
-.inline-block {
+body {
+  /*Logo*/
+}
+body .inline-block {
   height: 50px;
 }
 
-/*Pseudoclases Hover botones y menu*/
+/*Pseudoclases Hover botones*/
 .boton:hover {
   background-color: #04043f;
   box-shadow: 0 8px 22px rgba(4, 4, 63, 0.3);
 }
-
-/*Pseudoclases active botones presiona*/
+.boton {
+  /*Pseudoclases active botones presiona*/
+}
 .boton:active {
   transform: scale(0.95);
-  box-shadow: 0 4px 10px rgba(4, 4, 63, 0.2);
+  box-shadow: 0 4px 10px rgba(4, 4, 63, 0.3);
 }
-
-/* Pseudoclases Focus visible: accesibilidad al navegar con teclado */
+.boton {
+  /* Pseudoclases Focus visible: accesibilidad al navegar con teclado */
+}
 .boton:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(4, 4, 63, 0.5);
+  box-shadow: 0 0 0 3px rgba(4, 4, 63, 0.3);
 }
 
 /* Pseudoclases para el menu*/
 .menu a:hover {
   text-decoration: underline;
 }
-
-/* ====== Separadores entre items (excepto el último) ====== */
+.menu {
+  /* ====== Separadores entre items (excepto el último) ====== */
+}
 .menu > ul > li:not(:last-child) {
-  border-right: 1px solid #e5e7eb;
+  border-right: 1px solid #ffffff;
   padding-right: 1.25rem;
 }
 
@@ -116,32 +116,27 @@ header {
   align-items: center;
   padding: 10px 30px;
 }
-
 header nav {
   display: flex;
   align-items: center;
 }
-
 header nav ul {
   display: flex;
   column-gap: 30px;
   list-style: none;
 }
-
 header nav ul li a {
   text-decoration: none;
-  color: #ecedf3;
+  color: #ffffff;
 }
-
-.hamburguesa {
-  color: rgb(231, 231, 235);
+header .menu-toggle {
+  display: none;
+}
+header .hamburguesa {
+  color: #ffffff;
   font-size: 30px;
   display: none;
   cursor: pointer;
-}
-
-.menu-toggle {
-  display: none;
 }
 
 /*Indice*/
@@ -158,14 +153,43 @@ header nav ul li a {
   text-align: center;
   min-height: 200px;
 }
-
-.titulo_dentro {
-  display: block;
+.inicio .titulo_dentro {
   width: 100%;
   margin: 1rem 0;
   padding: 0.5rem;
+  font-size: 2rem;
+}
+.inicio .titulo_dentro .titulo_pre {
+  display: block;
+  color: #746c6c;
+  margin-bottom: 8px;
+}
+.inicio .titulo_dentro .titulo_marca {
+  display: block;
+  color: #0c2091;
+  font-weight: 700;
 }
 
+/* Contenedor de la ruta "Aprende con" */
+.container-ruta {
+  max-width: 1320px;
+  margin: 40px auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.container-ruta .centrado {
+  margin-bottom: 24px;
+}
+
+/* Grid de pasos*/
+.contenedor-pasos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  align-content: center;
+}
+
+/* Cards del inicio: Podcast, Videos, Ejemplos, Quizzes */
 .pasos-card-inicio {
   display: flex;
   flex-direction: column;
@@ -176,24 +200,6 @@ header nav ul li a {
   text-align: center;
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.container-ruta {
-  max-width: 1320px;
-  margin: 40px auto;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.container-ruta .centrado {
-  margin-bottom: 24px;
-}
-
-.contenedor-pasos {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  align-content: center;
 }
 
 /*pasos*/
@@ -218,7 +224,6 @@ header nav ul li a {
   gap: 24px;
   margin: 24px 20px 40px;
 }
-
 .materialnormas figure {
   margin: 0;
   border-radius: 16px;
@@ -228,28 +233,28 @@ header nav ul li a {
   flex-direction: column;
   overflow: hidden;
 }
-
-.materialnormas img {
+.materialnormas figure img {
   width: 100%;
   height: auto;
   display: block;
 }
-
-/*texto bajo imagen*/
-.materialnormas figcaption {
+.materialnormas figure {
+  /*texto bajo imagen*/
+}
+.materialnormas figure figcaption {
   padding: 16px 18px;
   text-align: center;
+  /*titulo en la tarjeta*/
 }
-
-/*titulo en la tarjeta*/
-.materialnormas figcaption h2 {
+.materialnormas figure figcaption h2 {
   margin: 0 0 8px;
   font-size: 1.2rem;
 }
-
-/*parrafos en contenedores*/
-.materialnormas p {
-  color: #050583;
+.materialnormas figure figcaption {
+  /*parrafos en contenedores*/
+}
+.materialnormas figure figcaption p {
+  color: #0b1220;
   margin: 0;
   line-height: 1.4;
   font-size: 0.95rem;
@@ -281,7 +286,7 @@ section .form-label {
 /*pie de paginas*/
 footer {
   background-color: #050538;
-  color: white;
+  color: #ffffff;
   text-align: center;
   margin-top: auto;
   padding: 0.5rem 1rem;
@@ -293,11 +298,13 @@ footer {
   header {
     position: relative;
   }
-  .hamburguesa {
+  header .hamburguesa {
     display: block;
     margin-left: auto;
   }
-  /* El navegador*/
+  header {
+    /* El navegador*/
+  }
   header nav {
     display: block;
     position: absolute;
@@ -318,10 +325,10 @@ footer {
   }
   header nav ul li a {
     display: block;
-    color: #ecedf3;
+    color: #ffffff;
   }
   header nav ul li a:hover {
-    background-color: #1f2937;
+    background-color: #04043f;
   }
   /* Mostrar el menú cuando el checkbox está marcado */
   .menu-toggle:checked + .hamburguesa + .menu ul {
@@ -338,11 +345,11 @@ footer {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+  /* ====== media para el contenedor de Ruta  ====== */
   .pasos-card {
     max-width: 350px;
     margin: 0 auto;
   }
-  /* ====== Fin movil contenedor index ====== */
   /* ====== movil para el contenedor normas  ====== */
   .materialnormas {
     grid-template-columns: 1fr;
