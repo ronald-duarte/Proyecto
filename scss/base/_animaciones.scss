@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "../utilities/maps" as *;
 
-
+/* animacion a las tarjetas */
 .pasos-card-inicio,
 .pasos-card,
 .materialnormas figure {
@@ -14,6 +14,8 @@
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
+
+/* animacion a los botones */
 .boton {
   transition: background-color .3s ease, transform .2s ease;
 }
@@ -21,14 +23,4 @@
 .boton:hover {
   transform: translateY(-3px);
   background-color: map.get($colores, color-primario-hover);
-}
-
-.inicio {
-  animation: bannerMove 12s infinite alternate ease-in-out;
-  background-size: 120% 120%;
-}
-
-@keyframes bannerMove {
-  0% { background-position: 0% 40%; }
-  100% { background-position: 100% 60%; }
 }

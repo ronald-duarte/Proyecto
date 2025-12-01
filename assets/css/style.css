@@ -114,6 +114,7 @@ body.dark .destacado {
   color: #ffffff;
 }
 
+/* animacion a las tarjetas */
 .pasos-card-inicio,
 .pasos-card,
 .materialnormas figure {
@@ -127,6 +128,7 @@ body.dark .destacado {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
+/* animacion a los botones */
 .boton {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -135,19 +137,6 @@ body.dark .destacado {
   transform: translateY(-3px);
 }
 
-.inicio {
-  animation: bannerMove 12s infinite alternate ease-in-out;
-  background-size: 120% 120%;
-}
-
-@keyframes bannerMove {
-  0% {
-    background-position: 0% 40%;
-  }
-  100% {
-    background-position: 100% 60%;
-  }
-}
 /*Pseudoclases Hover botones*/
 .boton:hover {
   background-color: #04043f;
