@@ -13,6 +13,7 @@
 .materialnormas figure:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  cursor: pointer;
 }
 
 /* animacion a los botones */
@@ -23,4 +24,26 @@
 .boton:hover {
   transform: translateY(-3px);
   background-color: map.get($colores, color-primario-hover);
+}
+
+
+/* animacion a inicio- recursos */
+  // overlay donde va el texto
+  .pasos-card-inicio {
+  .pasos-card-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.58);
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+  &:hover .pasos-card-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    cursor: pointer;
+  }
+
 }

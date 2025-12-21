@@ -118,6 +118,7 @@ body.dark .destacado {
 .materialnormas figure:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
 /* animacion a los botones */
@@ -127,6 +128,22 @@ body.dark .destacado {
 
 .boton:hover {
   transform: translateY(-3px);
+}
+
+/* animacion a inicio- recursos */
+.pasos-card-inicio .pasos-card-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.58);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.pasos-card-inicio:hover .pasos-card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+  cursor: pointer;
 }
 
 /*Pseudoclases Hover botones*/
@@ -306,34 +323,9 @@ body.dark .btn-toggle {
   background-position: center;
   background-repeat: no-repeat;
 }
-.pasos-card-inicio::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.18);
-  transition: opacity 0.25s ease;
-  pointer-events: none;
-}
-.pasos-card-inicio .pasos-card-overlay {
-  position: absolute;
-  inset: 0;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.58);
-  color: #ffffff;
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-.pasos-card-inicio:hover .pasos-card-overlay {
-  opacity: 1;
-  transform: translateY(0);
-  cursor: pointer;
-}
-.pasos-card-inicio .pasos-card-overlay h3, .pasos-card-inicio p {
+
+.pasos-card-inicio h3,
+.pasos-card-inicio p {
   color: #ffffff;
 }
 
