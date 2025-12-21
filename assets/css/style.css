@@ -282,6 +282,61 @@ body.dark .btn-toggle {
   color: #746c6c;
 }
 
+/* ===== Cards inicio: imagen de fondo + texto en hover ===== */
+.pasos-card-podcast {
+  background-image: url("../img/podcast.webp");
+}
+
+.pasos-card-videos {
+  background-image: url("../img/videos.webp");
+}
+
+.pasos-card-ejemplos {
+  background-image: url("../img/ejemplos.webp");
+}
+
+.pasos-card-quiz {
+  background-image: url("../img/quiz.webp");
+}
+
+.pasos-card-inicio {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.pasos-card-inicio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.pasos-card-inicio .pasos-card-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.58);
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.pasos-card-inicio:hover .pasos-card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+  cursor: pointer;
+}
+.pasos-card-inicio .pasos-card-overlay h3, .pasos-card-inicio p {
+  color: #ffffff;
+}
+
 /* ===== MODO OSCURO PARA EL BANNER DEL INDEX ===== */
 /* Cambiamos la imagen de fondo */
 body.dark .inicio {
@@ -334,6 +389,10 @@ body.dark .inicio .titulo_dentro p {
 /* Cards del inicio: Podcast, Videos, Ejemplos, Quizzes */
 .pasos-card-inicio {
   background-color: hsla(209, 100%, 50%, 0.205);
+  min-height: 260px;
+  padding: 0;
+  justify-content: initial;
+  align-items: initial;
 }
 
 body.dark .pasos-card-inicio {
@@ -520,10 +579,28 @@ footer {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+  .pasos-card-inicio {
+    min-height: 220px;
+    padding: 0;
+    align-items: stretch;
+    justify-content: flex-end;
+    background-size: cover;
+    background-position: center;
+  }
+  .pasos-card-inicio .pasos-card-overlay {
+    opacity: 1;
+    transform: none;
+    padding: 18px;
+    background: rgba(0, 0, 0, 0.45);
+  }
   /* ====== media para el contenedor de Ruta  ====== */
   .pasos-card {
     max-width: 350px;
     margin: 0 auto;
+  }
+  .hero-pasos {
+    padding-left: 16px;
+    padding-right: 16px;
   }
   /* ====== movil para el contenedor normas  ====== */
   .materialnormas {
@@ -534,5 +611,4 @@ footer {
     max-width: 420px;
     margin: 0 auto;
   }
-  /* ==== fin movil para el contenedor normas  ====== */
 }/*# sourceMappingURL=style.css.map */

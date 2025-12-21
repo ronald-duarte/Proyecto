@@ -42,6 +42,69 @@
         }
     }
 }
+
+/* ===== Cards inicio: imagen de fondo + texto en hover ===== */
+.pasos-card-podcast {
+    background-image: url('../img/podcast.webp');
+}
+.pasos-card-videos {
+    background-image: url('../img/videos.webp');
+}
+.pasos-card-ejemplos {
+    background-image: url('../img/ejemplos.webp');
+}
+.pasos-card-quiz {
+    background-image: url('../img/quiz.webp');
+}
+.pasos-card-inicio {
+  position: relative;
+  overflow: hidden;
+
+  // para que el fondo (imagen) se vea bien
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  // capa suave para uniformar la foto
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.18);
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+  }
+  // overlay donde va el texto
+  .pasos-card-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+
+    background: rgba(0, 0, 0, 0.58);
+    color: variables.$colortext-contraste;
+
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  &:hover .pasos-card-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    cursor: pointer;
+  }
+.pasos-card-overlay h3, p {
+  color: variables.$colortext-contraste;
+}
+}
+
+
+
 /* ===== MODO OSCURO PARA EL BANNER DEL INDEX ===== */
 
 /* Cambiamos la imagen de fondo */
@@ -97,6 +160,10 @@ body.dark .inicio .titulo_dentro p {
 .pasos-card-inicio {
     @extend %card-base;
     background-color: variables.$color-fondo-card;
+    min-height: 260px;    
+    padding: 0;            
+    justify-content: initial; 
+    align-items: initial;     
 }
 body.dark .pasos-card-inicio {
     background-color: variables.$color-fondo-primario;
