@@ -42,6 +42,10 @@ body {
   /*mapa modo CLARO */
   background-color: #f8fafc;
   color: #0b1220;
+  /*centrado*/
+  /*botones*/
+  /*parrafos mas destacados*/
+  /*Logo*/
 }
 body main {
   flex: 1;
@@ -55,16 +59,10 @@ body h2, body h3 {
   color: #0c2091;
   margin: auto;
 }
-body {
-  /*centrado*/
-}
 body .centrado {
   text-align: center;
   margin-bottom: 0.625rem;
   margin-top: 1.25rem;
-}
-body {
-  /*botones*/
 }
 body .boton {
   background-color: #0c2091;
@@ -75,18 +73,12 @@ body .boton {
   border-radius: 5px;
   font-size: 1rem;
 }
-body {
-  /*parrafos mas destacados*/
-}
 body .destacado {
   font-size: 1.2rem;
   max-width: 800px;
   margin: 0 auto;
   color: #0c1757;
   text-align: center;
-}
-body {
-  /*Logo*/
 }
 body .inline-block {
   height: 50px;
@@ -138,19 +130,17 @@ body.dark .destacado {
 }
 
 /*Pseudoclases Hover botones*/
+.boton {
+  /*Pseudoclases active botones presiona*/
+  /* Pseudoclases Focus visible: accesibilidad al navegar con teclado */
+}
 .boton:hover {
   background-color: #04043f;
   box-shadow: 0 8px 22px rgba(4, 4, 63, 0.3);
 }
-.boton {
-  /*Pseudoclases active botones presiona*/
-}
 .boton:active {
   transform: scale(0.95);
   box-shadow: 0 4px 10px rgba(4, 4, 63, 0.3);
-}
-.boton {
-  /* Pseudoclases Focus visible: accesibilidad al navegar con teclado */
 }
 .boton:focus-visible {
   outline: none;
@@ -158,11 +148,11 @@ body.dark .destacado {
 }
 
 /* Pseudoclases para el menu*/
-.menu a:hover {
-  text-decoration: underline;
-}
 .menu {
   /* ====== Separadores entre items (excepto el último) ====== */
+}
+.menu a:hover {
+  text-decoration: underline;
 }
 .menu > ul > li:not(:last-child) {
   border-right: 1px solid #ffffff;
@@ -175,9 +165,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
   position: relative;
+  padding: 12px 30px;
   z-index: 20;
+  height: 70px;
+  padding: 0 30px;
 }
 header nav {
   display: flex;
@@ -185,8 +177,11 @@ header nav {
 }
 header nav ul {
   display: flex;
-  column-gap: 30px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 header nav ul li a {
   text-decoration: none;
@@ -229,14 +224,12 @@ body.dark header .hamburguesa {
   font-size: 1.1rem;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
-}
-.btn-toggle:hover {
-  transform: translateY(-1px);
-}
-.btn-toggle {
   background-color: #ffffff;
   color: #0c2091;
   border: 1px solid #1f2937;
+}
+.btn-toggle:hover {
+  transform: translateY(-1px);
 }
 
 /* botón en modo oscuro: colores según mixin con condicional */
@@ -385,26 +378,22 @@ body.dark .pasos-card p {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  /*texto bajo imagen*/
 }
 .materialnormas figure img {
   width: 100%;
   height: auto;
   display: block;
 }
-.materialnormas figure {
-  /*texto bajo imagen*/
-}
 .materialnormas figure figcaption {
   padding: 16px 18px;
   text-align: center;
   /*titulo en la tarjeta*/
+  /*parrafos en contenedores*/
 }
 .materialnormas figure figcaption h2 {
   margin: 0 0 8px;
   font-size: 1.2rem;
-}
-.materialnormas figure figcaption {
-  /*parrafos en contenedores*/
 }
 .materialnormas figure figcaption p {
   color: #0b1220;
@@ -448,6 +437,9 @@ body.dark .contacto .form-control {
 }
 
 /* Color del placeholder en modo oscuro */
+body.dark .contacto .form-control::-moz-placeholder {
+  color: #746c6c;
+}
 body.dark .contacto .form-control::placeholder {
   color: #746c6c;
 }
@@ -479,13 +471,11 @@ footer {
 @media (max-width: 600px) {
   header {
     position: relative;
+    /* El navegador*/
   }
   header .hamburguesa {
     display: block;
     margin-left: auto;
-  }
-  header {
-    /* El navegador*/
   }
   header nav {
     display: block;
@@ -542,6 +532,4 @@ footer {
     margin: 0 auto;
   }
   /* ==== fin movil para el contenedor normas  ====== */
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
